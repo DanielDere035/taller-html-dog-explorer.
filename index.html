@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Explorer | Encuentra tu raza favorita</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Encabezado de la aplicación -->
+    <header class="header">
+        <div class="header__container">
+            <h1 class="header__title">Dog Explorer</h1>
+            <p class="header__subtitle">Encuentra, filtra y añade a favoritos las razas de perros.</p>
+        </div>
+    </header>
+
+    <!-- Contenedor principal de contenido -->
+    <main class="main-content">
+        
+        <!-- Sección del formulario de búsqueda -->
+        <section class="search-section" aria-labelledby="search-title">
+            <h2 id="search-title" class="visually-hidden">Buscador de Razas de Perros</h2>
+            <form id="search-form" class="search-form">
+                <div class="search-form__group">
+                    <label for="breed-input" class="search-form__label visually-hidden">Raza de perro</label>
+                    <input 
+                        type="search" 
+                        id="breed-input" 
+                        class="search-form__input" 
+                        placeholder="Ej: retriever, hound, bulldog..." 
+                        aria-label="Buscar raza de perro" 
+                        required
+                    >
+                </div>
+                <button type="submit" class="search-form__button search-form__button--primary" aria-label="Ejecutar búsqueda">
+                    Buscar
+                </button>
+                <button type="button" id="favorites-btn" class="search-form__button search-form__button--secondary" aria-label="Ver mis favoritos">
+                    Mis Favoritos
+                </button>
+            </form>
+        </section>
+
+        <!-- Contenedor dinámico para notificaciones de estado (carga o error) -->
+        <div id="status-message" class="status-message" aria-live="polite"></div>
+
+        <!-- Área de renderizado del grid de tarjetas -->
+        <section class="results-section" aria-labelledby="results-title">
+            <h2 id="results-title" class="results-section__title visually-hidden">Resultados de la búsqueda</h2>
+            <div id="dogs-container" class="dogs-grid"></div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__text">Desarrollado para la clase de Ingeniería Web &copy; 2026</p>
+        </div>
+    </footer>
+
+    <!-- Script principal de la aplicación -->
+    <script src="app.js" defer></script>
+</body>
+</html>
